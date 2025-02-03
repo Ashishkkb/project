@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { motion, useScroll, useSpring, useInView } from "framer-motion"
+import { motion, useScroll, useSpring, useTransform, useInView } from "framer-motion"
 import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
 import Products from "./components/Products"
@@ -48,6 +48,10 @@ export default function Home() {
     restDelta: 0.001,
   })
 
+  // Create a motion value for the progress bar color.
+  // The color will transition from red (#ff0000) at the top to blue (#0000ff) at the bottom.
+  const progressBarColor = useTransform(scrollYProgress, [0, 1], ["#ff0000", "#0000ff"])
+
   useEffect(() => {
     // Enable smooth scroll behavior
     document.documentElement.style.scrollBehavior = "smooth"
@@ -57,11 +61,11 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="relative min-h-screen bg-gray-50 overflow-x-hidden overflow-y-hidden">
-      {/* Progress Bar with a light blue tint */}
+    <div className="relative min-h-screen bg-gray-50 overflow-hidden">
+      {/* Progress Bar with dynamic color changing */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-blue-200 z-50"
-        style={{ scaleX }}
+        className="fixed top-0 left-0 right-0 h-1 z-50"
+        style={{ scaleX, backgroundColor: progressBarColor }}
       />
 
       {/* Navbar - Fixed */}
