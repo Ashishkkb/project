@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.HeroBg{
+background-image: url(./components/Images/image.png);
+}
