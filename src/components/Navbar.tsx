@@ -1,10 +1,18 @@
+'use client';
+
 import { Leaf, Phone, Mail, MapPin, Twitter, Facebook, Instagram, Pointer as Pinterest } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Navbar() {
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-white border-b">
+      <motion.div
+        className="bg-white border-b"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
@@ -60,24 +68,38 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Main Navigation */}
-      <nav className="bg-[#96B66C]">
+      <motion.nav
+        className="bg-[#96B66C]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex space-x-8 h-14">
-            <a href="/" className="text-white hover:text-gray-200 transition-colors inline-flex items-center px-1 pt-1 text-sm font-medium">
+            <a
+              href="/"
+              className="text-white hover:text-gray-200 transition-colors inline-flex items-center px-1 pt-1 text-sm font-medium"
+            >
               Home
             </a>
-            <a href="/about" className="text-white hover:text-gray-200 transition-colors inline-flex items-center px-1 pt-1 text-sm font-medium">
+            <a
+              href="/about"
+              className="text-white hover:text-gray-200 transition-colors inline-flex items-center px-1 pt-1 text-sm font-medium"
+            >
               About
             </a>
-            <a href="/contact" className="text-white hover:text-gray-200 transition-colors inline-flex items-center px-1 pt-1 text-sm font-medium">
+            <a
+              href="/contact"
+              className="text-white hover:text-gray-200 transition-colors inline-flex items-center px-1 pt-1 text-sm font-medium"
+            >
               Contact
             </a>
           </div>
         </div>
-      </nav>
+      </motion.nav>
     </>
   );
 }

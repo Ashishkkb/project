@@ -3,6 +3,7 @@
 import { Card } from "./../components/card"
 import { Avatar, AvatarFallback, AvatarImage } from "./../components/avatar"
 import { Quote } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 interface Testimonial {
   content: string;
@@ -47,40 +48,46 @@ export default function Testimonials() {
         
         <div className="grid gap-8 md:grid-cols-3">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="relative bg-white p-8 shadow-md">
-              <div className="absolute -top-4 left-8">
-                <div className="bg-primary p-2 rounded-full">
-                  <Quote className="w-5 h-5 text-white" />
+            <motion.div
+              key={index}
+              whileTap={{ scale: 1.1 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <Card className="relative bg-white p-8 shadow-md">
+                <div className="absolute -top-4 left-8">
+                  <div className="bg-primary p-2 rounded-full">
+                    <Quote className="w-5 h-5 text-white" />
+                  </div>
                 </div>
-              </div>
-              
-              <div className="space-y-6">
-                <blockquote className="text-gray-700 leading-relaxed min-h-[180px]">
-                  "{testimonial.content}"
-                </blockquote>
                 
-                <div className="border-t pt-6">
-                  <div className="flex items-center gap-4">
-                    <Avatar className="h-12 w-12">
-                      <AvatarImage src={testimonial.image} alt={testimonial.author} />
-                      <AvatarFallback>{testimonial.author[0]}</AvatarFallback>
-                    </Avatar>
-                    <div>
-                      <div className="font-semibold">{testimonial.author}</div>
-                      <div className="text-sm text-gray-600">
-                        {testimonial.role}
-                        {testimonial.company && (
-                          <>
-                            <span className="mx-1">·</span>
-                            <span>{testimonial.company}</span>
-                          </>
-                        )}
+                <div className="space-y-6">
+                  <blockquote className="text-gray-700 leading-relaxed min-h-[180px]">
+                    "{testimonial.content}"
+                  </blockquote>
+                  
+                  <div className="border-t pt-6">
+                    <div className="flex items-center gap-4">
+                      <Avatar className="h-12 w-12">
+                        <AvatarImage src={testimonial.image} alt={testimonial.author} />
+                        <AvatarFallback>{testimonial.author[0]}</AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <div className="font-semibold">{testimonial.author}</div>
+                        <div className="text-sm text-gray-600">
+                          {testimonial.role}
+                          {testimonial.company && (
+                            <>
+                              <span className="mx-1">·</span>
+                              <span>{testimonial.company}</span>
+                            </>
+                          )}
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </Card>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>
