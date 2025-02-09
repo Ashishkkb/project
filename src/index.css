@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-.HeroBg{
-background-image: url(./components/Images/image.png);
+.HeroBg {
+  background-image: url(./components/Images/image.png);
+}
+
+.size {
+  background-image: url(./components/Images/heroframe.png);
 }

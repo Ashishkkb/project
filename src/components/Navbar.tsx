@@ -1,9 +1,23 @@
-'use client';
+"use client";
 
-import { Leaf, Phone, Mail, MapPin, Twitter, Facebook, Instagram, Pointer as Pinterest } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { useState } from "react";
+import {
+  Leaf,
+  Phone,
+  Mail,
+  MapPin,
+  Twitter,
+  Facebook,
+  Instagram,
+  PinIcon as Pinterest,
+} from "lucide-react";
+import { motion } from "framer-motion";
+import Modal from "./Modal";
+import ContactUs from "./ContactUs";
 
 export default function Navbar() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
   return (
     <>
       {/* Top Bar */}
@@ -19,7 +33,9 @@ export default function Navbar() {
             <div className="flex items-center">
               <a href="/" className="flex items-center">
                 <Leaf className="h-8 w-8 text-[#96B66C]" />
-                <span className="ml-2 text-2xl font-semibold text-[#96B66C]">PurePickers</span>
+                <span className="ml-2 text-2xl font-semibold text-[#96B66C]">
+                  PurePickers
+                </span>
               </a>
             </div>
 
@@ -27,16 +43,28 @@ export default function Navbar() {
             <div className="flex items-center space-x-8">
               {/* Social Icons */}
               <div className="flex items-center space-x-4">
-                <a href="#" className="text-gray-600 hover:text-[#96B66C] transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-[#96B66C] transition-colors"
+                >
                   <Twitter size={18} />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-[#96B66C] transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-[#96B66C] transition-colors"
+                >
                   <Facebook size={18} />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-[#96B66C] transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-[#96B66C] transition-colors"
+                >
                   <Pinterest size={18} />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-[#96B66C] transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-[#96B66C] transition-colors"
+                >
                   <Instagram size={18} />
                 </a>
               </div>
@@ -47,20 +75,29 @@ export default function Navbar() {
                   <Phone className="text-[#96B66C]" size={18} />
                   <div className="flex flex-col">
                     <span className="text-xs text-gray-500">Call anytime</span>
-                    <a href="tel:+98-000-9630" className="text-sm font-medium">+ 98 (000) - 9630</a>
+                    <a href="tel:+98-000-9630" className="text-sm font-medium">
+                      + 98 (000) - 9630
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-center space-x-2">
                   <Mail className="text-[#96B66C]" size={18} />
                   <div className="flex flex-col">
                     <span className="text-xs text-gray-500">Send email</span>
-                    <a href="mailto:ambed@agrios.com" className="text-sm font-medium">ambed@agrios.com</a>
+                    <a
+                      href="mailto:ambed@agrios.com"
+                      className="text-sm font-medium"
+                    >
+                      ambed@agrios.com
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-center space-x-2">
                   <MapPin className="text-[#96B66C]" size={18} />
                   <div className="flex flex-col">
-                    <span className="text-sm font-medium">380 St Kilda Road</span>
+                    <span className="text-sm font-medium">
+                      380 St Kilda Road
+                    </span>
                     <span className="text-sm">Melbourne, Australia</span>
                   </div>
                 </div>
@@ -85,21 +122,23 @@ export default function Navbar() {
             >
               Home
             </a>
-            <a
-              href="/about"
-              className="text-white hover:text-gray-200 transition-colors inline-flex items-center px-1 pt-1 text-sm font-medium"
-            >
-              About
-            </a>
-            <a
-              href="/contact"
+            <button
+              onClick={() => setIsContactModalOpen(true)}
               className="text-white hover:text-gray-200 transition-colors inline-flex items-center px-1 pt-1 text-sm font-medium"
             >
               Contact
-            </a>
+            </button>
           </div>
         </div>
       </motion.nav>
+
+      {/* Contact Modal */}
+      <Modal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      >
+        <ContactUs onClose={() => setIsContactModalOpen(false)} />
+      </Modal>
     </>
   );
 }
