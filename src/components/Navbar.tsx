@@ -126,7 +126,7 @@ export default function Navbar() {
               onClick={() => setIsContactModalOpen(true)}
               className="text-white hover:text-gray-200 transition-colors inline-flex items-center px-1 pt-1 text-sm font-medium"
             >
-              Contact
+              Contact Us
             </button>
           </div>
         </div>

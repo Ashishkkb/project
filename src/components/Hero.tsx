@@ -14,19 +14,19 @@ export default function Hero() {
       <div className="relative container mx-auto px-4 h-full flex flex-col justify-center text-white">
         <div className="max-w-3xl">
           <div className="inline-block mb-6">
-            <span className="text-2xl font-light border-b-2 border-[#FFD77D]">
+            {/* <span className="text-2xl font-light border-b-2 border-[#FFD77D]">
               Pure & Natural
-            </span>
+            </span> */}
           </div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
             <div className="flex items-center gap-2 text-[#FFD77D]">
-              Agriculture Matter
+              Agriculture Matters
               <Leaf className="w-8 h-8 md:w-12 md:h-12" />
             </div>
-            <span className="text-white drop-shadow-lg">Good production</span>
+            {/* <span className="text-white drop-shadow-lg">Good production</span> */}
           </h1>
           <p className="text-xl md:text-2xl mb-10 max-w-2xl font-light">
-            Bringing quality agriculture and food products to the world,
+            Bringing quality Agricultural food products to the world,<br/>
             straight from India's finest farms.
           </p>
           <button className="bg-[#FFD77D] text-black px-12 py-4 rounded-full font-medium text-lg hover:bg-[#ffc44d] transition-colors uppercase">

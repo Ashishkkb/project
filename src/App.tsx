@@ -85,29 +85,21 @@ export default function Home() {
         </motion.div>
 
         {/* About Section */}
-        <AnimatedSection>
           <About />
-        </AnimatedSection>
 
         {/* Products Section */}
-        <AnimatedSection>
           <Products />
-        </AnimatedSection>
 
         {/* Fresh Section */}
-        <AnimatedSection>
           <Fresh />
-        </AnimatedSection>
 
         {/* Testimonials Section */}
-        <AnimatedSection>
+        {/* <AnimatedSection>
           <Testimonials />
-        </AnimatedSection>
+        </AnimatedSection> */}
 
         {/* Footer */}
-        <AnimatedSection>
-          <Footer />
-        </AnimatedSection>
+        <Footer />
       </div>
     </div>
   )

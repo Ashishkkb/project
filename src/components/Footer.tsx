@@ -56,7 +56,7 @@ export default function Footer() {
 
           {/* Right Section */}
           <div className="text-right">
-            <h3 className="text-xl font-semibold mb-8">Contact</h3>
+            <h3 className="text-xl font-semibold mb-8">Contact Us</h3>
             <div className="space-y-4 text-gray-400">
               <p>666 888 0000</p>
               <p>needhelp@company.com</p>
@@ -74,7 +74,7 @@ export default function Footer() {
       <div className="bg-[#162318] py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">Copyright ©Smart Agro. All Right Reserved.</p>
+            <p className="text-gray-400 text-sm mb-4 md:mb-0">Copyright ©️2025 Pure Pickers. All Rights Reserved.</p>
             <div className="flex space-x-8 text-gray-400 text-sm">
               <a href="#" className="hover:text-white transition-colors">
                 Terms & Conditions

@@ -1,6 +1,6 @@
 import f1 from "./Images/f1.svg";
 import f2 from "./Images/f2.svg";
-import f3 from "./Images/f3.svg";
+import f3 from "./Images/f34.webp"
 import f4 from "./Images/f4.svg";
 import f5 from "./Images/f5.svg";
 import f6 from "./Images/f6.svg";
@@ -11,7 +11,7 @@ const products = [
   { name: "Carrot", image: f5 },
   { name: "Tomato", image: f6 },
   { name: "Beet Root", image: f2 },
-  { name: "Pepper", image: f3 },
+  { name: "Capsicum", image: f3 },
   { name: "Spinach", image: f1 },
 ];
 
