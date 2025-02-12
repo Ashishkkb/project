@@ -73,11 +73,21 @@ export default function Navbar() {
               <div className="flex items-center space-x-8">
                 <div className="flex items-center space-x-2">
                   <Phone className="text-[#96B66C]" size={18} />
-                  <div className="flex flex-col">
-                    <span className="text-xs text-gray-500">Call anytime</span>
-                    <a href="tel:+98-000-9630" className="text-sm font-medium">
-                      + 98 (000) - 9630
-                    </a>
+                  <div className="flex flex-row gap2">
+                    <div className="flex flex-col">
+                      <a
+                        href="tel:+919008161630"
+                        className="text-sm font-medium"
+                      >
+                        +919008161630
+                      </a>
+                      <a
+                        href="tel:+917408423890"
+                        className="text-sm font-medium"
+                      >
+                        +917408423890
+                      </a>
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-2">
@@ -96,9 +106,9 @@ export default function Navbar() {
                   <MapPin className="text-[#96B66C]" size={18} />
                   <div className="flex flex-col">
                     <span className="text-sm font-medium">
-                      380 St Kilda Road
+                      HIG-366, Kalinga vihar
                     </span>
-                    <span className="text-sm">Melbourne, Australia</span>
+                    <span className="text-sm">Bhubaneswar, Odisha, India</span>
                   </div>
                 </div>
               </div>
